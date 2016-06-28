@@ -1,9 +1,12 @@
 $(function() {
-    var charScore = [{ "char": "A", "value": 1 }, { "char": "B", "value": 3 }, { "char": "C", "value": 3 }, { "char": "D", "value": 2 }, { "char": "E", "value": 1 }, { "char": "F", "value": 4 }, { "char": "G", "value": 2 }, { "char": "H", "value": 4 }, { "char": "I", "value": 1 }, { "char": "J", "value": 8 }, { "char": "K", "value": 5 }, { "char": "L", "value": 1 }, { "char": "M", "value": 3 }, { "char": "N", "value": 1 }, { "char": "O", "value": 1 }, { "char": "P", "value": 3 }, { "char": "Q", "value": 1 }, { "char": "R", "value": 1 }, { "char": "S", "value": 1 }, { "char": "T", "value": 1 }, { "char": "U", "value": 1 }, { "char": "V", "value": 4 }, { "char": "W", "value": 4 }, { "char": "X", "value": 8 }, { "char": "Y", "value": 4 }, { "char": "Z", "value": 1 }];
-    var chars = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "A", "E", "I", "O", "U", "Y", "R", "L", "S", "T", "N"];
+    var charScore = [{ "char": "A", "value": 100 }, { "char": "B", "value": 300 }, { "char": "C", "value": 300 }, { "char": "D", "value": 200 }, { "char": "E", "value": 100 }, { "char": "F", "value": 400 }, { "char": "G", "value": 200 }, { "char": "H", "value": 400 }, { "char": "I", "value": 100 }, { "char": "J", "value": 800 }, { "char": "K", "value": 500 }, { "char": "L", "value": 100 }, { "char": "M", "value": 300 }, { "char": "N", "value": 100 }, { "char": "O", "value": 100 }, { "char": "P", "value": 300 }, { "char": "Q", "value": 100 }, { "char": "R", "value": 100 }, { "char": "S", "value": 100 }, { "char": "T", "value": 100 }, { "char": "U", "value": 100 }, { "char": "V", "value": 400 }, { "char": "W", "value": 400 }, { "char": "X", "value": 800 }, { "char": "Y", "value": 400 }, { "char": "Z", "value": 100 }];
+    var chars = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", 
+                "S", "T", "U", "V", "W", "X", "Y", "Z", "A", "E", "I", "O", "U", "Y", "R", "L", "S", "T", "N",
+                "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "R", 
+                "S", "T", "U", "V", "W", "Y", "A", "E", "I", "O", "U"];
 
     var box = [
-        ["", "", "", "D", "O", "G", "", "", "", ""],
+        ["", "", "", "", "", "", "", "", "", ""],
         ["", "", "", "", "", "", "", "", "", ""],
         ["", "", "", "", "", "", "", "", "", ""],
         ["", "", "", "", "", "", "", "", "", ""],
@@ -19,6 +22,7 @@ $(function() {
     //
     var selected = [];
     var textSelected = [];
+    var preSetWords = [];
     //
     var totalScore = 0;
     //
@@ -59,6 +63,61 @@ $(function() {
         }
     }
     //
+    var quadRoll = function() {
+            var result = Math.floor((Math.random() * 4) + 1);
+            return result;
+        }
+        //    
+    var randCell = function() {
+            var rand = Math.floor((Math.random() * 9) + 0);
+            return rand;
+        }
+        //
+    
+    //
+    var setWords = function() {
+
+        // var rand = Math.floor((Math.random() * 10) + 5);
+        var len = wordlist.length;
+        for (var i = 0; i < 20; i++) {
+            var newWord = wordlist[Math.floor((Math.random() * len) + 5)];
+            if (newWord.length >= 4 && newWord.length <= 7) {
+                preSetWords.push(newWord);
+            }
+        }
+    };
+    //
+
+    var arrangeWords = function() {
+        setWords();
+        for (var i = 0; i < preSetWords.length; i++) {
+            var word = preSetWords[i].split("");
+            var row = randCell();            
+            var col = randCell();
+            box[row][col] = word[0];
+            console.log(box[row][col]); 
+            for (var n = 1; n < word.length; n++) {
+                var roll = quadRoll();
+                    if(roll === 1 && row > 0 && box[row][col] === ""){
+                        row = row - 1;
+                        box[row][col] = word[n];
+                    } 
+                    if(roll === 2 && col < 9 && box[row][col] === ""){
+                        col = col + 1;
+                        box[row][col+1] = word[n];
+                    }    
+                    if(roll === 3 && row < 9 && box[row][col] === ""){
+                        row = row + 1;
+                        box[row][col] = word[n];
+                    }
+                    if(roll === 4 && col > 0 && box[row][col] === ""){
+                       col = col + 1; 
+                       box[row][col] = word[n];
+                    } 
+                }
+            }
+        }
+
     //
     function getScore(letter) {
         for (var i = 0; i < charScore.length; i++) {
@@ -71,6 +130,8 @@ $(function() {
 
     //
     function setGame() {
+        arrangeWords();
+        console.log(preSetWords);
         for (var i = 0; i < box.length; i++) {
 
             randLetters(box[i]);
@@ -144,25 +205,7 @@ $(function() {
                 newtext.push(newSelected[i].text);
             }
         }
-        // console.log("newtext = " + newtext);
         //
-        // arr = jQuery.map(arr, function(n, i) {
-        //     return (n.toUpperCase() + i);
-        // });
-
-
-        //
-
-
-        //
-        //
-        // var groups = _.groupBy(selected, 1);
-        // var result = _.map(divsSelected, function (i) { return groups[i].shift(); });
-
-        // for (var i = 0; i < result.length; i++){
-        //     console.log(result[i].text());
-        // }
-        // 
         text = removeBlanks(newtext);
 
         selected = removeBlanks(selected.unique());
@@ -233,16 +276,16 @@ $(function() {
             backgroundColor: "rgba(252,255,0,0.7)"
         }, 450);
         setTimeout(function() {
-           td.html("<div class='tile' id='" + row + "/" + col + "''>" + letter + "</div>"); 
+            td.html("<div class='tile' id='" + row + "/" + col + "''>" + letter + "</div>");
         }, 500)
 
     }
 
-    var topRowTiles = function(coord){
-        var cell = $(document.getElementById(coord.td));
-        
-    }
-    
+    // var topRowTiles = function(coord) {
+    //     var cell = $(document.getElementById(coord.td));
+
+    // }
+
 
     var dropTiles = function(coord) {
         var slid = false;
@@ -257,10 +300,10 @@ $(function() {
         // console.log(upTD.attr("id"));
         var char = upCell.text();
         // newRando(upTD, (coord.row - 1), coord.col);
-        
+
         $(upper).animate({
-                top: downSlide
-            }, 300);
+            top: downSlide
+        }, 300);
 
         setTimeout(function() {
             console.log("timer running");
@@ -272,11 +315,11 @@ $(function() {
         }, 400);
         // console.log(slid);
         // if (slid === true) {
-                // console.log("slid = true")
-                // var currentTD = $(document.getElementById("td" + (coord.row) + "/" + coord.col));
-                // currentTD.html("<div class='tile' id='" + (coord.row) + "/" + coord.col + "'>" + char + "</div");
-                // newRando(upTD, (coord.row - 1), coord.col);
-                // slid = false;
+        // console.log("slid = true")
+        // var currentTD = $(document.getElementById("td" + (coord.row) + "/" + coord.col));
+        // currentTD.html("<div class='tile' id='" + (coord.row) + "/" + coord.col + "'>" + char + "</div");
+        // newRando(upTD, (coord.row - 1), coord.col);
+        // slid = false;
         // }
     }
 
@@ -300,7 +343,7 @@ $(function() {
                 for (var i = 0; i < tds.length; i++) {
                     if (tds[i].row > 0) {
                         dropTiles(tds[i]);
-                    }else if(tds[i].row === 0){
+                    } else if (tds[i].row === 0) {
                         newRando(tds[i].td, tds[i].row, tds[i].col);
                     }
 

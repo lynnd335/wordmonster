@@ -1,80 +1,129 @@
+* {
+    box-sizing: border-box;
+}
+
 body{
- font-family: helvetica;
+ font-family: helvetica, sans-serif;
  -webkit-touch-callout: none;
  -webkit-user-select: none;
  -khtml-user-select: none;
  -moz-user-select: none;
+ background: url(HD-landscape-Photographs.png);
+ background-size: cover;
+ background-repeat: no-repeat;
+ background-position: fixed;
 }
-/*div{
-	width: 250px;
-	height: 250px;
-	padding: 5px;
-	text-align: justify;
-	text-justify: auto;
-	border: 1px solid black;
-}*/
-table{
-	width: 60%;
-	height: 60%;
-	max-width: 498px;
-	max-height: 724px;
-	margin-left: auto;
-	margin-right: auto;
-	/*table-layout: fixed;*/
-	z-index: 95;
-	/*border-collapse: separate;
-	border-spacing: 0px;*/
-}
-td{
-	/*overflow: hidden;*/
-	align: center;
-	vertical-align: middle;
-	width: 10%;
-	height: 10%;
-	cursor: pointer;
-	padding: 4px;
-	min-height: 45px;
-	min-width: 45px;
-	position: relative;
-
-	/*border: 2px solid black;*/
-}
-td .tile{
-	font-size: 19px;
-	text-align: center;
-	vertical-align: middle;
-	line-height: 45px;
-	max-height: 45px;
-	max-width: 45px;
-	/*margin: auto;*/
-	margin-left: auto;
-	margin-right: auto;
-	width: 100%;
+#main{
+	width: 40%;
 	height: 100%;
-	cursor: pointer;
-	z-index: 99;
-	border: 2px solid #000;
-	background-color: rgba(252,255,0,0.7);
-	border-radius: 10%;
+	margin-left: 27.5%;
+	margin-right: 27.5%;
 	position: relative;
+	
+	border-radius: 5px;
+
 }
 
-td .selected-tile{
-	font-size: 19px;
+#content{
+	width: 100%;
+	height: 50%;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: rgba(255,255,255,0.5);
+	border-radius: 5%;
+}
+
+.column{
+	width: 9.4%;
+	height: 100%;
+	min-height: 100%;
+	margin-right: auto;
+	margin-left: auto;
+	display: inline-block;
+	
+
+}
+
+.letter-tile, .selected-tile, .blank-tile{
+	font-size: 24px;
+	line-height: 175%;
 	text-align: center;
 	vertical-align: middle;
-	line-height: 45px;
-	margin: auto;
 	width: 100%;
-	height: 100%;
-	cursor: pointer;
-	z-index: 99;
-	border: 2px solid blue;
-	background-color: rgba(64, 140, 255, 0.7);
-	border-radius: 10%;
-}
-td .new-tile{
-	width: 10%;
 	height: 10%;
-	font-size: 0px;
+	/*margin-bottom: 1%;*/
+	border: 1px solid transparent;
+	cursor: pointer;
+	border-radius: 25%;
+	
+}
+.blank-tile{
+	height: 1%;
+	line-height: 0%;
+}
+
+.letter-tile{
+	-moz-background-clip: border;     /* Firefox 3.6 */
+  -webkit-background-clip: border;  /* Safari 4? Chrome 6? */
+  background-clip: border-box;      /* Firefox 4, Safari 5, Opera 10, IE 9 */
+				
+  -moz-background-clip: padding;     /* Firefox 3.6 */
+  -webkit-background-clip: padding;  /* Safari 4? Chrome 6? */
+  background-clip: padding-box;      /* Firefox 4, Safari 5, Opera 10, IE 9 */
+				
+  -moz-background-clip: content;     /* Firefox 3.6 */
+  -webkit-background-clip: content;  /* Safari 4? Chrome 6? */
+  background-clip: content-box;      /* Firefox 4, Safari 5, Opera 10, IE 9 */
+	background-color: rgba(252,255,0,1);
+}
+
+.selected-tile {
+	-moz-background-clip: border;     /* Firefox 3.6 */
+  -webkit-background-clip: border;  /* Safari 4? Chrome 6? */
+  background-clip: border-box;      /* Firefox 4, Safari 5, Opera 10, IE 9 */
+				
+  -moz-background-clip: padding;     /* Firefox 3.6 */
+  -webkit-background-clip: padding;  /* Safari 4? Chrome 6? */
+  background-clip: padding-box;      /* Firefox 4, Safari 5, Opera 10, IE 9 */
+				
+  -moz-background-clip: content;     /* Firefox 3.6 */
+  -webkit-background-clip: content;  /* Safari 4? Chrome 6? */
+  background-clip: content-box;      /* Firefox 4, Safari 5, Opera 10, IE 9 */
+	background-color: rgba(64, 140, 255, 1);
+}
+
+#info{
+	height: 20%;
+	width: 100%;
+	background-color: blue;
+	
+	position: relative;
+	padding: 5%;
+	color: white;
+	border-radius: 1%;
+}
+
+.info-box{
+	margin: 2%;
+	background-color: black;
+	width: 90%;
+	height: 30%;
+	font-size: 26px;
+	text-align: center;
+	vertical-align: middle;
+	border-radius: 5px;
+
+}
+#current-word{
+	color: orange;
+	
+}
+#score{
+	color: yellow;
+}
+
+@media (min-width: 800px) {
+  body {
+    font-size: 12px;
+  }
 }

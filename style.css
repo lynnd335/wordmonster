@@ -8,7 +8,7 @@ body{
  -webkit-user-select: none;
  -khtml-user-select: none;
  -moz-user-select: none;
- background: url(wood.jpg);
+ background: url(HD-landscape-Photographs.png);
  background-size: cover;
  background-repeat: no-repeat;
  background-position: fixed;
@@ -30,7 +30,6 @@ body{
 	margin-right: auto;
 	margin-left: auto;
 	background-color: rgba(255,255,255,0.5);
-	border-radius: 5%;
 }
 
 .column{
@@ -41,7 +40,6 @@ body{
 	margin-left: auto;
 	display: inline-block;
 	
-
 }
 
 .letter-tile, .selected-tile, .blank-tile{
@@ -75,6 +73,20 @@ body{
   -webkit-background-clip: content;  /* Safari 4? Chrome 6? */
   background-clip: content-box;      /* Firefox 4, Safari 5, Opera 10, IE 9 */
 	background-color: rgba(252,255,0,1);
+	-o-transition:.25s;
+  -ms-transition:.25s;
+  -moz-transition:.25s;
+  -webkit-transition:.02s;
+  transition:.25s;
+}
+
+.letter-tile:hover{
+	background-color: rgba(252,204,0,1);
+	-o-transition:.25s;
+  -ms-transition:.25s;
+  -moz-transition:.25s;
+  -webkit-transition:.25s;
+  transition:.25s;
 }
 
 .selected-tile {
@@ -111,15 +123,20 @@ body{
 	font-size: 26px;
 	text-align: center;
 	vertical-align: middle;
-	border-radius: 5px;
+	border-radius: 1px;
 
 }
 #current-word{
 	color: orange;
-	
+}
+#score-timer{
+	color: white;
 }
 #score{
-	color: yellow;
+	float: left;
+}
+#timer{
+	float: right;
 }
 
 @media (min-width: 800px) {

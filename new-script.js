@@ -12,26 +12,25 @@ $(function() {
     ];
 
     var chars = [
-        "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R",
-        "S", "T", "U", "V", "W", "X", "Y", "Z", "A", "E", "I", "O", "U", "Y", "R", "L", "S", "T", "N",
-        "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "A", "A", "A", "A", "A", "A", "A",
-        "A", "A", "I", "I", "I", "I", "I", "I", "I", "I", "I", "O", "O", "O", "O", "O", "O", "O", "O", "N",
-        "N", "N", "N", "N", "N", "R", "R", "R", "R", "R", "R", "T", "T", "T", "T", "T", "T", "L", "L", "L",
-        "L", "S", "S", "S", "S", "U", "U", "U", "U", "D", "D", "D", "D", "G", "G", "G", "B", "B", "C", "C",
-        "M", "M", "P", "P", "F", "F", "H", "H", "V", "V", "W", "W", "Y", "Y", "K", "J", "X", "Q", "Z"
+        "R", "L", "S", "T", "N","E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "A", "A", "A", 
+        "A", "A", "A", "A","A", "A", "I", "I", "I", "I", "I", "I", "I", "I", "I", "O", "O", "O", "O", "O", 
+        "O", "O", "O", "N", "N", "N", "N", "N", "N", "R", "R", "R", "R", "R", "R", "T", "T", "T", "T", "T", 
+        "T", "L", "L", "L", "L", "S", "S", "S", "S", "U", "U", "U", "U", "D", "D", "D", "D", "G", "G", "G", 
+        "B", "B", "C", "C", "M", "M", "P", "P", "F", "F", "H", "H", "V", "V", "W", "W", "Y", "Y", "K", "J", 
+        "X", "Q", "Z"
     ];
 
     var box = [
         { "char": "", "index": 0 }, { "char": "", "index": 1 }, { "char": "", "index": 2 }, { "char": "", "index": 3 }, { "char": "", "index": 4 }, { "char": "", "index": 5 }, { "char": "", "index": 6 }, { "char": "", "index": 7 }, { "char": "", "index": 8 }, { "char": "", "index": 9 },
         { "char": "", "index": 10 }, { "char": "", "index": 11 }, { "char": "", "index": 12 }, { "char": "", "index": 13 }, { "char": "", "index": 14 }, { "char": "", "index": 15 }, { "char": "", "index": 16 }, { "char": "", "index": 17 }, { "char": "", "index": 18 }, { "char": "", "index": 19 },
         { "char": "", "index": 20 }, { "char": "", "index": 21 }, { "char": "", "index": 22 }, { "char": "", "index": 23 }, { "char": "", "index": 24 }, { "char": "", "index": 25 }, { "char": "", "index": 26 }, { "char": "", "index": 27 }, { "char": "", "index": 28 }, { "char": "", "index": 29 },
-        { "char": "", "index": 30 }, { "char": "", "index": 31 }, { "char": "", "index": 32 }, { "char": "", "index": 33 }, { "char": "", "index": 34 }, { "char": "", "index": 35 }, { "char": "", "index": 36 }, { "char": "", "index": 37 }, { "char": "", "index": 38 }, { "char": "R", "index": 39 },
-        { "char": "", "index": 40 }, { "char": "", "index": 41 }, { "char": "", "index": 42 }, { "char": "", "index": 43 }, { "char": "", "index": 44 }, { "char": "", "index": 45 }, { "char": "", "index": 46 }, { "char": "", "index": 47 }, { "char": "", "index": 48 }, { "char": "A", "index": 49 },
-        { "char": "", "index": 50 }, { "char": "", "index": 51 }, { "char": "", "index": 52 }, { "char": "", "index": 53 }, { "char": "", "index": 54 }, { "char": "", "index": 55 }, { "char": "", "index": 56 }, { "char": "", "index": 57 }, { "char": "", "index": 58 }, { "char": "C", "index": 59 },
-        { "char": "", "index": 60 }, { "char": "", "index": 61 }, { "char": "", "index": 62 }, { "char": "", "index": 63 }, { "char": "", "index": 64 }, { "char": "", "index": 65 }, { "char": "", "index": 66 }, { "char": "", "index": 67 }, { "char": "", "index": 68 }, { "char": "E", "index": 69 },
-        { "char": "", "index": 70 }, { "char": "", "index": 71 }, { "char": "", "index": 72 }, { "char": "", "index": 73 }, { "char": "", "index": 74 }, { "char": "", "index": 75 }, { "char": "", "index": 76 }, { "char": "", "index": 77 }, { "char": "", "index": 78 }, { "char": "C", "index": 79 },
-        { "char": "", "index": 80 }, { "char": "", "index": 81 }, { "char": "", "index": 82 }, { "char": "", "index": 83 }, { "char": "", "index": 84 }, { "char": "", "index": 85 }, { "char": "", "index": 86 }, { "char": "", "index": 87 }, { "char": "", "index": 88 }, { "char": "A", "index": 89 },
-        { "char": "", "index": 90 }, { "char": "", "index": 91 }, { "char": "", "index": 92 }, { "char": "", "index": 93 }, { "char": "", "index": 94 }, { "char": "", "index": 95 }, { "char": "", "index": 96 }, { "char": "", "index": 97 }, { "char": "", "index": 98 }, { "char": "R", "index": 99 }
+        { "char": "", "index": 30 }, { "char": "", "index": 31 }, { "char": "", "index": 32 }, { "char": "", "index": 33 }, { "char": "", "index": 34 }, { "char": "", "index": 35 }, { "char": "", "index": 36 }, { "char": "", "index": 37 }, { "char": "", "index": 38 }, { "char": "", "index": 39 },
+        { "char": "", "index": 40 }, { "char": "", "index": 41 }, { "char": "", "index": 42 }, { "char": "", "index": 43 }, { "char": "", "index": 44 }, { "char": "", "index": 45 }, { "char": "", "index": 46 }, { "char": "", "index": 47 }, { "char": "", "index": 48 }, { "char": "", "index": 49 },
+        { "char": "", "index": 50 }, { "char": "", "index": 51 }, { "char": "", "index": 52 }, { "char": "", "index": 53 }, { "char": "", "index": 54 }, { "char": "", "index": 55 }, { "char": "", "index": 56 }, { "char": "", "index": 57 }, { "char": "", "index": 58 }, { "char": "", "index": 59 },
+        { "char": "", "index": 60 }, { "char": "", "index": 61 }, { "char": "", "index": 62 }, { "char": "", "index": 63 }, { "char": "", "index": 64 }, { "char": "", "index": 65 }, { "char": "", "index": 66 }, { "char": "", "index": 67 }, { "char": "", "index": 68 }, { "char": "", "index": 69 },
+        { "char": "", "index": 70 }, { "char": "", "index": 71 }, { "char": "", "index": 72 }, { "char": "", "index": 73 }, { "char": "", "index": 74 }, { "char": "", "index": 75 }, { "char": "", "index": 76 }, { "char": "", "index": 77 }, { "char": "", "index": 78 }, { "char": "", "index": 79 },
+        { "char": "", "index": 80 }, { "char": "", "index": 81 }, { "char": "", "index": 82 }, { "char": "", "index": 83 }, { "char": "", "index": 84 }, { "char": "", "index": 85 }, { "char": "", "index": 86 }, { "char": "", "index": 87 }, { "char": "", "index": 88 }, { "char": "", "index": 89 },
+        { "char": "", "index": 90 }, { "char": "", "index": 91 }, { "char": "", "index": 92 }, { "char": "", "index": 93 }, { "char": "", "index": 94 }, { "char": "", "index": 95 }, { "char": "", "index": 96 }, { "char": "", "index": 97 }, { "char": "", "index": 98 }, { "char": "", "index": 99 }
     ];
 
     var dirList = [];
@@ -42,9 +41,9 @@ $(function() {
 
     var size = 0;
 
+    var level = 1;
     
-    
-    
+    var timeLeft = 180000;
 
     var currLeft = 0;
     var currTop = 0;
@@ -140,6 +139,13 @@ $(function() {
         return move;
     }
 
+    var setTime = function(){
+        
+        $("#timer").text((timeLeft -= 1000) / 1000 );
+    }
+
+    
+           
     //
 
     var dirCheck = function(cell) {
@@ -197,7 +203,7 @@ $(function() {
     //    
 
     var setGame = function() {
-        arrangeWords();
+        // arrangeWords();
         randLetters();
         for (var i = 0; i < box.length; i++) {
             var col = $("#col" + (Math.floor(i / 10)).toString());
@@ -206,6 +212,7 @@ $(function() {
         $(".column").each(function(t){
             $(this).append("<div class=\"blank-tile\">&nbsp;</div>")
         })
+        setInterval(setTime, 1000); 
 
     }
 
@@ -361,7 +368,9 @@ $(function() {
                 color: "transparent",
                 backgroundColor: "white",
                 boxShadow: "inset 0px 0px 0px 0px #fff",
-                height: "50%",
+                height: "0%",
+                // lineHeight: "0%",
+                fontSize: "0px"
                 // marginBottom: "1%"
             }, 400)
 
@@ -392,7 +401,6 @@ $(function() {
 
 
     };
-
 
 
 
@@ -432,13 +440,6 @@ $(function() {
             currentWord();
             // currentMove();
 
-        } else {
-            $(this).animate({
-                backgroundColor: "rgba(252,204,0,1)",
-                border: "2px solid #fcff00",
-                color: "black"
-
-            }, 20);
         }
     });
     $(document).on("mouseup", function() {
@@ -446,20 +447,15 @@ $(function() {
         collect();
         unmoused();
     });
-    $(document).on("mouseout", ".letter-tile", function() {
-        if (isDown === false) {
-            $(this).animate({
-                backgroundColor: "rgba(252,255,0,1)",
-                border: "2px solid #000",
-                color: "black"
-            }, 20);
-        }
-    })
+   
 
     $(window).resize(function(){
         var w = window.innerWidth;
         var h = window.innerHeight;
         console.log(w + "/" + h)
     })
+
+
+
 
 });
